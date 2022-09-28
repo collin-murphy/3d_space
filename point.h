@@ -1,13 +1,13 @@
 #pragma once
 #include "definitions.h"
 
-class Space{
+class Point{
 private:
     float pos_x;
     float pos_y;
     float pos_z;
 public:
-    Space(float x, float y, float z);
+    Point(float x, float y, float z);
 
     void setX(float x){pos_x = x;};
     float getX(){return pos_x;};
@@ -17,10 +17,10 @@ public:
 
     void setZ(float z){pos_z = z;};
     float getZ(){return pos_z;};
-    
+
 };
 
-Space::Space(float x = WORLDSIZE / 2, float y = WORLDSIZE / 2,
+Point::Point(float x = WORLDSIZE / 2, float y = WORLDSIZE / 2,
             float z = WORLDSIZE / 2 ){
     pos_x = x;
     pos_y = y;
