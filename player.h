@@ -1,33 +1,21 @@
 #pragma once
 #include "definitions.h"
+#include "point.h"
+#include "angle.h"
+
 
 class Player{
 private:
-    float pos_x;
-    float pos_y;
-    float pos_z;
-    float angle;
+    Point point;
+    Angle angle;
 public:
-    Player(float x, float y, float z, float a);
+    Angle getAngle(){return angle;};
+    Point getPoint(){return point;};
 
-    void setX(float x){pos_x = x;};
-    float getX(){return pos_x;};
-
-    void setY(float y){pos_y = y;};
-    float getY(){return pos_y;};
-
-    void setZ(float z){pos_z = z;};
-    float getZ(){return pos_z;};
-
-    void setAngle(float a){angle = a;};
-    float getAngle(){return angle;};
-    
+    Player(float a, Point p);
 };
 
-Player::Player(float x = WORLDSIZE, float y = WORLDSIZE, 
-               float z = WORLDSIZE, float a = 0){
-    pos_x = x;
-    pos_y = y;
-    pos_z = z;
-    angle = a;
+Player::Player(float a = 45, Point p = Point(0,0,0)){
+    point = p;
+    angle.setA1(a);
 }
